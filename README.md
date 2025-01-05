@@ -1,5 +1,5 @@
 # Arithmetic-Encoder-Decoder
-**Compact Utility Software allowing you to encode and decode a piece of text of your choice using arithmetic coding.** This piece of software was a sideproject of mine and is based on some of the curriculum we had in my second semester of university, having to do with compression algorithms.
+**Arithmeticoder - A compact Utility Software allowing you to encode and decode a piece of text of your choice using arithmetic coding.** This piece of software was a sideproject of mine and is based on some of the curriculum we had in my second semester of university, having to do with compression algorithms.
 
 <br>
 
