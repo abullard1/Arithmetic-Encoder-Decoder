@@ -1,0 +1,63 @@
+plugins {
+    id 'java'
+    id 'application'
+    id("io.github.file5.guidesigner") version "1.0.2"
+    id("org.panteleyev.jpackageplugin") version "1.6.0"
+}
+
+group = 'org.abullard1'
+version = '1.0.0'
+
+tasks.jpackage {
+    appName = "Arithmeticoder"
+    appVersion = version.toString()
+    vendor = "org.abullard1"
+    copyright = "Samuel Ruairi Bullard"
+    input = "$buildDir/libs"
+    mainJar = "Arithmetic_Encoder_Gradle-1.0.0.jar"
+
+    runtimeImage = System.getProperty("java.home")
+    destination = "$buildDir/dist"
+    mainClass = "org.abullard1.Main"
+
+    mac {
+        icon = "${projectDir}/src/main/resources/images/icon-arithmetic-encoder.png"
+    }
+    windows {
+        icon = "${projectDir}/src/main/resources/images/icon-arithmetic-encoder.ico"
+        winMenu = true
+        winDirChooser = true
+    }
+
+    linux {
+        icon = "${projectDir}/src/main/resources/images/icon-arithmetic-encoder.png"
+        linuxShortcut = true
+        linuxMenuGroup = "Utility"
+    }
+}
+
+jar {
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    manifest {
+        attributes 'Main-Class': "org.abullard1.Main"
+    }
+}
+
+application {
+    mainClassName = "org.abullard1.Main"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.formdev:flatlaf:1.6'
+    testImplementation (
+            'com.codeborne:selenide-full-screenshot:7.0.2',
+            'org.junit.jupiter:junit-jupiter:5.10.0')
+    implementation "com.jetbrains.intellij.java:java-gui-forms-rt:+"
+    implementation "com.jgoodies:forms:1.1-preview"
+}
