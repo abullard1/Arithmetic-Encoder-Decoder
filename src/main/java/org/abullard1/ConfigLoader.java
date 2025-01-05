@@ -1,4 +1,4 @@
-package main.java.org.abullard1;
+package org.abullard1;
 
 import java.io.IOException;
 import java.io.InputStream;
