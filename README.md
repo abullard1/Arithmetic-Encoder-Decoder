@@ -12,4 +12,3 @@ For information on how Arithmetic Coding works, refer to this short but easy to 
 
 # Releases
 An executable version of the app is available as .exe (windows) and .deb (Linux) files in the *Release* Section of this Repository. 
-A macOS version and the possibility for an apt repo download will follow shortly. A flatpak version will also soon be available.
